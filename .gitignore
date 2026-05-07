@@ -21,3 +21,6 @@ package-lock.json
 
 # Ignore files created by MacOS
 .DS_Store
+
+# Ignore CV source document (contains personal contact info)
+Jinsong-Dong-cv-full*.docx

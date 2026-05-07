@@ -11,10 +11,7 @@
     "theme",
     "minimal"
   ],
-  "contributors": [
-    "Michael Rose",
-    "Robert Zupko"
-  ],
+  "author": "Jin-Song Dong",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/academicpages/academicpages.github.io/issues"

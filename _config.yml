@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Jin-Song Dong"
   pronouns         : # example: "she/her"
-  bio              : "Professor in the Computer Science Department at the National University of Singapore. Research spans formal methods with LLM agents, trusted AI, safety and security systems, probabilistic reasoning, and verified LLM code synthesis. Co-founded the PAT model checking system (4,000+ users across 150 countries) and the Silas trusted machine learning system (50K+ downloads), with 200+ papers in venues including ICML, NeurIPS, ICLR, POPL, ICSE, and CAV. Fellow of the Institute of Engineers Australia."
+  bio              : "Professor, Computer Science Department, NUS"
   location         : "Singapore"
   employer         : "National University of Singapore"
   uri              : # URL

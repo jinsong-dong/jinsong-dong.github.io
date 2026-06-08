@@ -11,26 +11,24 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
+{% assign non_books = site.publications | where_exp: "p", "p.category != 'books'" | sort: "date" | reverse %}
+{% assign by_year = non_books | group_by_exp: "p", "p.date | date: '%Y'" %}
+
+{% for year_group in by_year %}
+  <h2 class="archive__year">{{ year_group.name }}</h2>
+  <ol class="publication-list">
+    {% for post in year_group.items %}
+      <li>{{ post.citation }}</li>
     {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+  </ol>
+{% endfor %}
+
+{% assign books = site.publications | where: "category", "books" | sort: "date" | reverse %}
+{% if books.size > 0 %}
+  <h2 class="archive__year">Books / Editorship</h2>
+  <ol class="publication-list">
+    {% for post in books %}
+      <li>{{ post.citation }}</li>
+    {% endfor %}
+  </ol>
 {% endif %}
-
-
-
